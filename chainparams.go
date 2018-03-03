@@ -10,7 +10,7 @@ import (
 
 // activeNetParams is a pointer to the parameters specific to the currently
 // active bitcoin network.
-var activeNetParams = bitcoinTestNetParams
+var activeNetParams = bitcoinMainNetParams
 
 // bitcoinNetParams couples the p2p parameters of a network with the
 // corresponding RPC port of a daemon running on the particular network.
@@ -31,6 +31,11 @@ type litecoinNetParams struct {
 var bitcoinTestNetParams = bitcoinNetParams{
 	Params:  &bitcoinCfg.TestNet3Params,
 	rpcPort: "18334",
+}
+
+var bitcoinMainNetParams = bitcoinNetParams{
+	Params:  &bitcoinCfg.MainNetParams,
+	rpcPort: "8334",
 }
 
 // bitcoinSimNetParams contains parameters specific to the simulation test
